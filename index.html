@@ -13,15 +13,70 @@
     <title>Skaičiuoklė testas</title>
 </head>
 <body>
-
-    <h1>Pradedu</h1>
-
+    <section class="container main-container">
+        <!-- Bootsrap grid for positioning and mobile friendly view -->
+        <section class="row">
+            <div class="col-lg-6 offset-3">
+                <!-- heading -->
+                <h1 class="dislplay-4">Skaičiuoklė</h1>
+                <!-- bootstrap Navigation -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                    <a class="nav-link active " href="#">Algos skaičiavimas "į rankas"</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link " href="#">Algos skaičiavimas "ant popieriaus"</a>
+                    </li>
+                </ul>
+                <section id="tab1">
+                    <!-- Tab heading -->
+                    <h2>Įveskite duomenis apskaičiavimui</h2>
+                    <!-- form start -->
+                    <form action="#" method="post">
+                        <!-- salaryOnPaper input -->
+                        <div class="form-group">
+                            <label for="salaryOnPaper">Įveskite savo algą "ant popieriaus"</label>
+                            <input type="num" class="form-control" id="salaryOnPaper" placeholder="jūsų alga 'ant popieriaus'">
+                        </div>
+                        <!-- Autorinių sutarčių checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Pažymėkite jei turite pajamų iš autorinių sutarčių</label>
+                        </div>
+                        <!-- Autorinių sutarčių input -->
+                        <div class="form-group mt-1">
+                                <label for="authorAgreement">Įveskite savo pajamas iš Autorinių sutarčių</label>
+                                <input type="num" class="form-control" id="authorAgreement" placeholder="Autorinių sutarčių pajamos">
+                            </div>
+                        <!-- submit button -->
+                        <button type="submit" class="btn btn-primary">Apskaičiuoti</button>
+                        <hr>
+                        <div class="form-row">
+                            <!-- sodra output -->
+                            <div class="form-group col-md-6">
+                                <label for="sodra">Sodros mokesčiai</label>
+                                <input type="text" class="form-control" id="sodra" placeholder="sodros mokesčiai" readonly>
+                            </div>
+                            <!-- health insurance output -->
+                            <div class="form-group col-md-6">
+                                <label for="sveikatosDraudimas">Sveikatos draudimas</label>
+                                <input type="text" class="form-control" id="sveikatosDraudimas" placeholder="sveikatos draudimo suma" readonly>
+                            </div>
+                        </div>
+                        <!-- employer taxes output -->
+                        <div class="form-group">
+                            <label for="employer">Darbdavio mokesčiai ir Jūsų darbo vietos kaina darbdaviui.</label>
+                            <input type="text" class="form-control" id="employer" placeholder="" readonly>
+                        </div>
+                    </form> <!-- form end -->
+                </section>
+            </div>
+        </section>
     
     
     
     
-    
-    
+    </section>
     
     
     
