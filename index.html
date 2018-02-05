@@ -30,9 +30,9 @@
                 </ul>
                 <section id="tab1Content">
                     <!-- Tab heading -->
-                    <h2>Įveskite duomenis apskaičiavimui</h2>
+                    <h2 class="h4 text-center my-3">Įveskite duomenis apskaičiavimui</h2>
                     <!-- tab1 form start =================================================== -->
-                    <form action="#" method="post">
+                    <form>
                         <!-- alga i rankas input -->
                         <div class="form-group">
                             <label for="tab1algaAntPopieriaus">Įveskite savo algą "ant popieriaus"</label>
@@ -40,78 +40,83 @@
                         </div>
                         <!-- Autorinių sutarčių checkbox -->
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="authorAgreementCheckbox" value="1" onclick="tab1Toggle()">
-                            <label class="form-check-label" for="inlineCheckbox1">Pažymėkite jei turite pajamų iš autorinių sutarčių</label>
+                            <input class="form-check-input" type="checkbox" id="tab1AutoriniuTeisiuCheckbox" onclick="tab1Toggle()">
+                            <label class="form-check-label" for="tab1AutoriniuTeisiuCheckbox">Pažymėkite jei turite pajamų iš autorinių sutarčių</label>
                         </div>
                         <!-- Autorinių sutarčių input -->
-                        <div id="authorAgreementInput" class="form-group mt-1  d-none">
-                                <label for="authorAgreement">Įveskite savo pajamas iš Autorinių sutarčių</label>
-                                <input type="num" class="form-control" id="authorAgreement" placeholder="Autorinių sutarčių pajamos" onkeyup="tab1SalaryEnter()">
+                        <div id="tab1AutoriniųTeisiuIvedimoDiv" class="form-group mt-1  d-none">
+                                <label for="tab1AutorinesPajamos">Įveskite savo pajamas iš Autorinių sutarčių</label>
+                                <input type="num" class="form-control" id="tab1AutorinesPajamos" placeholder="Autorinių sutarčių pajamos" onkeyup="tab1SalaryEnter()">
                             </div>
                         <hr>
                         <div class="form-row">
                             <!-- sodra output -->
                             <div class="form-group col-md-4">
-                                <label for="sodra">Sodros mokesčiai (3%) </label>
-                                <input type="num" class="form-control" id="sodra" placeholder="sodros mokesčiai" readonly>
+                                <label for="tab1Sodra">Sodros mokesčiai (3%) </label>
+                                <input type="num" class="form-control" id="tab1Sodra" placeholder="sodros mokesčiai" readonly>
                             </div>
                             <!-- health insurance output -->
                             <div class="form-group col-md-4">
-                                <label for="sveikatosDraudimas">Sveikatos draudimas (6%)</label>
-                                <input type="num" class="form-control" id="sveikatosDraudimas" placeholder="sveikatos draudimo suma" readonly>
+                                <label for="tab1SveikatosDraudimas">Sveikatos draudimas (6%)</label>
+                                <input type="num" class="form-control" id="tab1SveikatosDraudimas" placeholder="sveikatos draudimo suma" readonly>
                             </div>
                             <!-- Gyventojo pajamų mokestis 15% -->
                             <div class="form-group col-md-4">
-                                <label for="gyvPajamuMokestis">GPM 15% (VMI)</label>
-                                <input type="num" class="form-control" id="gyvPajamuMokestis" readonly>
+                                <label for="tab1GyvPajamuMokestis">GPM 15% (VMI)</label>
+                                <input type="num" class="form-control" id="tab1GyvPajamuMokestis" readonly>
                             </div>
                         </div>
-                        <!-- employer taxes output -->
+                        <!-- Darbdavio mokesčiai output -->
                         <div class="form-group">
-                            <label for="employer">Darbdavio mokesčiai ir Jūsų darbo vietos kaina darbdaviui (31.18%)</label>
-                            <input type="num" class="form-control" id="employer" placeholder="" readonly>
+                            <label for="tab1DarbdavioMokesciai">Darbdavio mokesčiai (31.18%)</label>
+                            <input type="num" class="form-control" id="tab1DarbdavioMokesciai" placeholder="" readonly>
+                        </div>
+                        <!-- kaina darbdaviui output -->
+                        <div class="form-group">
+                            <label for="tab1KainaDarbdaviui">Jūsų darbo vietos kaina darbdaviui</label>
+                            <input type="num" class="form-control" id="tab1KainaDarbdaviui" placeholder="" readonly>
                         </div>
                         <hr>
-                        <!-- salary take home output -->
+                        <!-- atlyginimas "į rankas" output -->
                         <div class="form-group">
-                            <label for="salaryTakeHome">Jūsų atlyginimas "į rankas"</label>
-                            <input type="num" class="form-control" id="salaryTakeHome" placeholder="" readonly>
+                            <label for="tab1AtlyginimasIRankas">Jūsų atlyginimas "į rankas"</label>
+                            <input type="num" class="form-control" id="tab1AtlyginimasIRankas" placeholder="" readonly>
                         </div>
                     </form> <!-- tab1 form end -->
                 </section> <!-- tab1Content end -->
                 <section id="tab2Content" class="d-none">
                     <!-- Tab heading -->
-                    <h2>Įveskite duomenis apskaičiavimui</h2>
+                    <h2 class="h4 text-center my-3">Įveskite duomenis apskaičiavimui</h2>
                     <!-- tab2 form start ======================================================= -->
                     <form>
-                        <!-- salaryOnPaper input -->
+                        <!-- alga ant popieriaus input -->
                         <div class="form-group">
-                            <label for="tab2salaryTakeHome">Įveskite savo algą "į rankas"</label>
-                            <input type="num" class="form-control" id="tab2salaryTakeHome" placeholder="jūsų alga 'į rankas'" onkeyup="tab2SalaryEnter()">
+                            <label for="tab2AlgaIRankas">Įveskite savo algą "į rankas"</label>
+                            <input type="num" class="form-control" id="tab2AlgaIRankas" placeholder="jūsų alga 'į rankas'" onkeyup="tab2SalaryEnter()">
                         </div>
                         <!-- Autorinių sutarčių checkbox -->
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="tab2AuthorAgreementCheckbox" value="1" onclick="tab2Toggle()">
-                            <label class="form-check-label" for="tab2AuthorAgreementCheckbox">Pažymėkite jei turite pajamų iš autorinių sutarčių</label>
+                            <input class="form-check-input" type="checkbox" id="tab2AutoriniuTeisiuCheckbox" value="1" onclick="tab2Toggle()">
+                            <label class="form-check-label" for="tab2AutoriniuTeisiuCheckbox">Pažymėkite jei turite pajamų iš autorinių sutarčių</label>
                         </div>
                         <!-- Autorinių sutarčių input -->
-                        <div id="tab2authorAgreementInput" class="form-group mt-1 d-none">
-                                <label for="tab2AuthorAgreement">Įveskite savo pajamas iš Autorinių sutarčių į rankas</label>
-                                <input type="num" class="form-control" id="tab2AuthorAgreement" placeholder="Autorinių sutarčių pajamos" onkeyup="tab2SalaryEnter()" >
+                        <div id="tab2AutoriniųTeisiuIvedimoDiv" class="form-group mt-1 d-none">
+                                <label for="tab2AutorinesPajamos">Įveskite savo pajamas iš Autorinių sutarčių į rankas</label>
+                                <input type="num" class="form-control" id="tab2AutorinesPajamos" placeholder="Autorinių sutarčių pajamos" onkeyup="tab2SalaryEnter()" >
                             </div>
                         <hr>
-                        <!-- salary on paper output -->
+                        <!-- atlyginimas ant popieriaus -->
                         <div class="form-group">
-                            <label for="tab2salaryOnPaper">Jūsų atlyginimas ant popieriaus</label>
-                            <input type="num" class="form-control" id="tab2salaryOnPaper" placeholder="" readonly>
+                            <label for="tab2AlgaAntPopieriaus">Jūsų atlyginimas ant popieriaus</label>
+                            <input type="num" class="form-control" id="tab2AlgaAntPopieriaus" placeholder="" readonly>
                         </div>
                         <div class="form-row">
-                            <!-- health insurance -->
+                            <!-- Sveikatos draudimas -->
                             <div class="form-group col-md-6">
-                                <label for="tab2HealthInsurance">Sveikatos draudimas 6% </label>
-                                <input type="num" class="form-control" id="tab2HealthInsurance"  readonly>
+                                <label for="tab2SveikDraudimas">Sveikatos draudimas 6% </label>
+                                <input type="num" class="form-control" id="tab2SveikDraudimas"  readonly>
                             </div>
-                            <!-- pension and social insurance -->
+                            <!-- Pensijų ir soc. draudimas -->
                             <div class="form-group col-md-6">
                                 <label for="tab2PensijuDraudimas">Pensijų ir soc. draudimas 3%</label>
                                 <input type="num" class="form-control" id="tab2PensijuDraudimas"  readonly>
@@ -132,7 +137,7 @@
                         <div class="form-row">
                             <!-- employer tax output -->
                             <div class="form-group col-md-12">
-                                <label for="tab2KainuojaDarbdaviui"> ir Jūsų darbo vietos kaina darbdaviui </label>
+                                <label for="tab2KainuojaDarbdaviui">Jūsų darbo vietos kaina darbdaviui </label>
                             <input type="num" class="form-control" id="tab2KainuojaDarbdaviui" placeholder="" readonly>
                             </div>
                         </div>

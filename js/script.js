@@ -31,22 +31,27 @@
     // tab1 autorinių sutarčių checkbox funkcija
     function tab1Toggle() {
         // jei varnele uždedama pašaliname d-none klasę ir parodome įvedimo lauką
-        if (document.querySelector('#authorAgreementCheckbox').checked) {
-            document.querySelector("#authorAgreementInput").classList.toggle("d-none");
+        if (document.querySelector('#tab1AutoriniuTeisiuCheckbox').checked) {
+            document.querySelector("#tab1AutoriniųTeisiuIvedimoDiv").classList.toggle("d-none");
         } else {
             // jei varnele nuimama pridedame d-none klasę ir parodome įvedimo lauką
-            document.querySelector("#authorAgreementInput").classList.toggle("d-none");
+            document.querySelector("#tab1AutoriniųTeisiuIvedimoDiv").classList.toggle("d-none");
+            // pašaliname ivestą sumą jei varnele nuimama
+            document.querySelector("#tab1AutorinesPajamos").value = "";
         }
     }
 
     // tab2 autorinių sutarčių checkbox funkcija
     function tab2Toggle() {
         // jei varnele uždedama pašaliname d-none klasę ir parodome įvedimo lauką
-        if (document.querySelector('#tab2AuthorAgreementCheckbox').checked) {
-            document.querySelector("#tab2authorAgreementInput").classList.toggle("d-none");
+        if (document.querySelector('#tab2AutoriniuTeisiuCheckbox').checked) {
+            document.querySelector("#tab2AutoriniųTeisiuIvedimoDiv").classList.toggle("d-none");
         } else {
              // jei varnele nuimama pridedame d-none klasę ir parodome įvedimo lauką
-            document.querySelector("#tab2authorAgreementInput").classList.toggle("d-none");
+            document.querySelector("#tab2AutoriniųTeisiuIvedimoDiv").classList.toggle("d-none");
+            // pašaliname ivestą sumą jei varnele nuimama
+            document.querySelector("#tab2AutorinesPajamos").value = "";
+            
         }
     }
 
@@ -77,27 +82,30 @@
         // Gaunam value is ivedimo formos
         let enteredValue = document.querySelector("#tab1algaAntPopieriaus").value
         //skaiciuojam sodra
-        document.querySelector("#sodra").value = (enteredValue * SODROSPROC).toFixed(2);
-        let sodra = document.querySelector("#sodra").value;
+        document.querySelector("#tab1Sodra").value = (enteredValue * SODROSPROC).toFixed(2);
+        let sodra = document.querySelector("#tab1Sodra").value;
         //skaiciuojam sveikatos draudima 
-        document.querySelector("#sveikatosDraudimas").value = (enteredValue * SVEIKDRAUDPROC).toFixed(2);
-        let sveikatosDraudimas = document.querySelector("#sveikatosDraudimas").value
+        document.querySelector("#tab1SveikatosDraudimas").value = (enteredValue * SVEIKDRAUDPROC).toFixed(2);
+        let sveikatosDraudimas = document.querySelector("#tab1SveikatosDraudimas").value
         //skaiciuojam Gyventojo pajamų mokesti 15%
-        document.querySelector("#gyvPajamuMokestis").value = (enteredValue * GYVPAJAMUMOKESTIS).toFixed(2);
-        let gyvPajamuMokestis = document.querySelector("#gyvPajamuMokestis").value
+        document.querySelector("#tab1GyvPajamuMokestis").value = (enteredValue * GYVPAJAMUMOKESTIS).toFixed(2);
+        let gyvPajamuMokestis = document.querySelector("#tab1GyvPajamuMokestis").value
+        
         //skaiciuojam darbdavio mokescius
-        document.querySelector("#employer").value = (enteredValue * (1 + DARBDAVIOMOKESČIAI)).toFixed(2);
-        let darbdavioMokesčiai = document.querySelector("#employer").value;
+        document.querySelector("#tab1DarbdavioMokesciai").value = (enteredValue * DARBDAVIOMOKESČIAI).toFixed(2);
+        //skaiciuojam darbo vietos kaina darbdaviui
+        document.querySelector("#tab1KainaDarbdaviui").value = (enteredValue * (1 + DARBDAVIOMOKESČIAI)).toFixed(2);
+        
         // skaičiuojame autoriniu sutarciu sumą po mokesčių
         // patikriname ar kas nors yra įvesta į autorinių sut lauką
-        if (!document.querySelector("#authorAgreement").value == "") {
-            let enteredValueAuth = document.querySelector("#authorAgreement").value
+        if (!document.querySelector("#tab1AutorinesPajamos").value == "") {
+            let enteredValueAuth = document.querySelector("#tab1AutorinesPajamos").value
             let amoutAfterAuthorAgreementTax = enteredValueAuth *(1 - AUTORINIUSUTPROC);
             // skaiciuojam atlyginima i rankas su Autorinem sutartim
-            document.querySelector("#salaryTakeHome").value = (enteredValue - sodra - sveikatosDraudimas - gyvPajamuMokestis + amoutAfterAuthorAgreementTax).toFixed(2);
+            document.querySelector("#tab1AtlyginimasIRankas").value = (enteredValue - sodra - sveikatosDraudimas - gyvPajamuMokestis + amoutAfterAuthorAgreementTax).toFixed(2);
         } else {
         // skaiciuojam atlyginima i rankas jei nera Autorinių sutarčių
-        document.querySelector("#salaryTakeHome").value = (enteredValue - sodra - sveikatosDraudimas - gyvPajamuMokestis).toFixed(2);
+        document.querySelector("#tab1AtlyginimasIRankas").value = (enteredValue - sodra - sveikatosDraudimas - gyvPajamuMokestis).toFixed(2);
         }
     }
 
@@ -108,23 +116,23 @@
     // tab2 mokesčių skaičiavimo funkcija ==============================================================================
     function tab2SalaryEnter() {
         // Gaunam value is ivedimo formos
-        let enteredValue = document.querySelector("#tab2salaryTakeHome").value
+        let enteredValue = document.querySelector("#tab2AlgaIRankas").value
         
         // skaičiuojame autoriniu sutarciu sumą su atlyginimu
         // pasitikriname ar yra yvesta reiksme i autorinių sutarčių lauką
-        if (!(document.querySelector("#tab2AuthorAgreement").value) == "") {
-            let enteredValueAuth = document.querySelector("#tab2AuthorAgreement").value
+        if (!(document.querySelector("#tab2AutorinesPajamos").value) == "") {
+            let enteredValueAuth = document.querySelector("#tab2AutorinesPajamos").value
             // skaičiuojame įvestos sumos į rankas išraišką ant popieriaus
             let amoutAfterAuthorAgreementTax = enteredValueAuth / (1 - AUTORINIUSUTPROC);
             
             // skaiciuojam atlyginima ant popieriaus + Autorinių sutarčių suma ant popieriaus
-            document.querySelector("#tab2salaryOnPaper").value = (enteredValue / ANTPOPIERIAUSPROC + amoutAfterAuthorAgreementTax).toFixed(2);
+            document.querySelector("#tab2AlgaAntPopieriaus").value = (enteredValue / ANTPOPIERIAUSPROC + amoutAfterAuthorAgreementTax).toFixed(2);
             // išsaugome gautą sumą tolimesniems skaičiavimams
-            var atlyginimasAntPopieriaus = document.querySelector("#tab2salaryOnPaper").value
+            var atlyginimasAntPopieriaus = document.querySelector("#tab2AlgaAntPopieriaus").value
         } else {
         // paskaičiuojame ir atvaizduojame atlyginimą ant popieriaus kai nera įvesta autorinių sutarcių suma
-        document.querySelector("#tab2salaryOnPaper").value = (enteredValue / ANTPOPIERIAUSPROC).toFixed(2);
-        var atlyginimasAntPopieriaus = document.querySelector("#tab2salaryOnPaper").value
+        document.querySelector("#tab2AlgaAntPopieriaus").value = (enteredValue / ANTPOPIERIAUSPROC).toFixed(2);
+        var atlyginimasAntPopieriaus = document.querySelector("#tab2AlgaAntPopieriaus").value
         }
         
         //skaiciuojam sodra
@@ -132,7 +140,7 @@
         //skaiciuojam pajamu mokesti
         document.querySelector("#tab2PajamuMokestis").value = (atlyginimasAntPopieriaus * GYVPAJAMUMOKESTIS).toFixed(2);
         //skaiciuojam Sveikatos draudimą
-        document.querySelector("#tab2HealthInsurance").value = (atlyginimasAntPopieriaus * SVEIKDRAUDPROC).toFixed(2);
+        document.querySelector("#tab2SveikDraudimas").value = (atlyginimasAntPopieriaus * SVEIKDRAUDPROC).toFixed(2);
         //skaiciuojam darbdavio mokescius
         document.querySelector("#tab2DarbdavioMokesciai").value = (atlyginimasAntPopieriaus * DARBDAVIOMOKESČIAI).toFixed(2);
         //skaiciuojam kaina darbdaviui

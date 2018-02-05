@@ -1,15 +1,13 @@
-
-
-/* tab color and font wight corrections */
+/* aktyvus tabas paryskintas */
 .active {
     font-weight: bold;
 }
-
+/* nuorodos juodos */
 ul li a {
-    color: black;
+    color: rgb(88, 88, 88);
 }
 
 ul li a:hover {
-    color: rgb(77, 77, 77);
+    color: rgb(24, 24, 24);
 }
 
