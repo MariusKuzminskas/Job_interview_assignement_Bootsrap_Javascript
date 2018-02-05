@@ -31,7 +31,7 @@
                 <section id="tab1Content">
                     <!-- Tab heading -->
                     <h2>Įveskite duomenis apskaičiavimui</h2>
-                    <!-- form start -->
+                    <!-- tab1 form start -->
                     <form action="#" method="post">
                         <!-- salaryOnPaper input -->
                         <div class="form-group">
@@ -44,12 +44,12 @@
                             <label class="form-check-label" for="inlineCheckbox1">Pažymėkite jei turite pajamų iš autorinių sutarčių</label>
                         </div>
                         <!-- Autorinių sutarčių input -->
-                        <div class="form-group mt-1">
+                        <div class="form-group mt-1 d-none">
                                 <label for="authorAgreement">Įveskite savo pajamas iš Autorinių sutarčių</label>
                                 <input type="num" class="form-control" id="authorAgreement" placeholder="Autorinių sutarčių pajamos">
                             </div>
                         <!-- submit button -->
-                        <button type="submit" class="btn btn-primary">Apskaičiuoti</button>
+                        <button type="submit" class="btn btn-primary mt-2">Apskaičiuoti</button>
                         <hr>
                         <div class="form-row">
                             <!-- sodra output -->
@@ -68,9 +68,51 @@
                             <label for="employer">Darbdavio mokesčiai ir Jūsų darbo vietos kaina darbdaviui.</label>
                             <input type="text" class="form-control" id="employer" placeholder="" readonly>
                         </div>
-                    </form> <!-- form end -->
+                    </form> <!-- tab1 form end -->
+                </section> <!-- tab1Content end -->
+                <section id="tab2Content" class="d-none">
+                    <!-- Tab heading -->
+                    <h2>Įveskite duomenis apskaičiavimui</h2>
+                    <!-- tab1 form start -->
+                    <form action="#" method="post">
+                        <!-- salaryOnPaper input -->
+                        <div class="form-group">
+                            <label for="salaryOnPaper">Įveskite savo algą "į rankas"</label>
+                            <input type="num" class="form-control" id="tab2SalaryOnPaper" placeholder="jūsų alga 'ant popieriaus'">
+                        </div>
+                        <!-- Autorinių sutarčių checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="tab2AuthorAgreementCheckbox" value="option1">
+                            <label class="form-check-label" for="tab2AuthorAgreementCheckbox">Pažymėkite jei turite pajamų iš autorinių sutarčių</label>
+                        </div>
+                        <!-- Autorinių sutarčių input -->
+                        <div class="form-group mt-1 d-none">
+                                <label for="authorAgreement">Įveskite savo pajamas iš Autorinių sutarčių</label>
+                                <input type="num" class="form-control" id="tab2AuthorAgreement" placeholder="Autorinių sutarčių pajamos">
+                            </div>
+                        <!-- submit button -->
+                        <button type="submit" class="btn btn-primary mt-2">Apskaičiuoti</button>
+                        <hr>
+                        <div class="form-row">
+                            <!-- sodra output -->
+                            <div class="form-group col-md-6">
+                                <label for="sodra">Sodros mokesčiai</label>
+                                <input type="text" class="form-control" id="tab2Sodra" placeholder="sodros mokesčiai" readonly>
+                            </div>
+                            <!-- income tax output -->
+                            <div class="form-group col-md-6">
+                                <label for="sveikatosDraudimas">Pajamų mokestis</label>
+                                <input type="text" class="form-control" id="tab2PajamuMokestis" placeholder="Pajamų mokesčio suma" readonly>
+                            </div>
+                        </div>
+                        <!-- salary on paper output -->
+                        <div class="form-group">
+                            <label for="employer">Jūsų atlyginimas ant popieriaus</label>
+                            <input type="text" class="form-control" id="tab2salaryOnPaper" placeholder="" readonly>
+                        </div>
+                    </form> <!-- tab2 form end -->
                 </section>
-            </div>
+            </div> <!-- col-lg-6 end -->
         </section>
     
     
