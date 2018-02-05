@@ -1,3 +1,15 @@
-h1 {
-    
+
+
+/* tab color and font wight corrections */
+.active {
+    font-weight: bold;
 }
+
+ul li a {
+    color: black;
+}
+
+ul li a:hover {
+    color: rgb(77, 77, 77);
+}
+
